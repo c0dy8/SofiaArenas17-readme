@@ -1,0 +1,83 @@
+<svg width="800" height="170" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 170">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%"   stop-color="#0f0c29"/>
+      <stop offset="45%"  stop-color="#302b63"/>
+      <stop offset="100%" stop-color="#1a1a2e"/>
+    </linearGradient>
+    <filter id="glow1"><feGaussianBlur stdDeviation="42" result="blur"/></filter>
+    <filter id="glow2"><feGaussianBlur stdDeviation="55" result="blur"/></filter>
+    <filter id="glow3"><feGaussianBlur stdDeviation="35" result="blur"/></filter>
+    <linearGradient id="textgrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#c084fc"/>
+      <stop offset="40%"  stop-color="#f9a8d4"/>
+      <stop offset="100%" stop-color="#67e8f9"/>
+    </linearGradient>
+    <style>
+      .o1 { animation: f1 9s ease-in-out infinite; }
+      .o2 { animation: f2 11s ease-in-out infinite; }
+      .o3 { animation: f3 7s ease-in-out infinite; }
+      .o4 { animation: f4 13s ease-in-out infinite; }
+      .sub { animation: fade 2s ease-in forwards; opacity: 0; }
+      .ttl { animation: fadein 1.5s ease-in forwards; opacity: 0; }
+      @keyframes fadein { to { opacity:1; } }
+      @keyframes fade   { to { opacity:1; } }
+      @keyframes f1 {
+        0%,100% { transform: translate(0px,  0px); }
+        50%     { transform: translate(40px,-25px); }
+      }
+      @keyframes f2 {
+        0%,100% { transform: translate(0px, 0px); }
+        50%     { transform: translate(-30px,20px); }
+      }
+      @keyframes f3 {
+        0%,100% { transform: translate(0px,  0px); }
+        50%     { transform: translate(20px, 30px); }
+      }
+      @keyframes f4 {
+        0%,100% { transform: translate(0px, 0px); }
+        50%     { transform: translate(-25px,-15px); }
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="170" fill="url(#bg)"/>
+
+  <!-- Colorful floating orbs -->
+  <circle cx="120"  cy="85"  r="110" fill="#7c3aed" opacity="0.45" filter="url(#glow1)" class="o1"/>
+  <circle cx="680"  cy="90"  r="100" fill="#ec4899" opacity="0.38" filter="url(#glow2)" class="o2"/>
+  <circle cx="400"  cy="40"  r="90"  fill="#3b82f6" opacity="0.30" filter="url(#glow3)" class="o3"/>
+  <circle cx="530"  cy="140" r="80"  fill="#06b6d4" opacity="0.28" filter="url(#glow1)" class="o4"/>
+
+  <!-- Subtle dot grid overlay -->
+  <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1" fill="white" opacity="0.06"/>
+  </pattern>
+  <rect width="800" height="170" fill="url(#dots)"/>
+
+  <!-- Main title with gradient text (via clip trick) -->
+  <defs>
+    <linearGradient id="tg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#c084fc"/>
+      <stop offset="50%"  stop-color="#f9a8d4"/>
+      <stop offset="100%" stop-color="#67e8f9"/>
+    </linearGradient>
+  </defs>
+  <text x="400" y="88" text-anchor="middle"
+        font-family="Segoe UI, Arial, sans-serif"
+        font-size="40" font-weight="800"
+        fill="url(#tg)" class="ttl">Hi, I&#39;m Sofia Arenas &#128075;</text>
+
+  <!-- Subtitle -->
+  <text x="400" y="126" text-anchor="middle"
+        font-family="Segoe UI, Arial, sans-serif"
+        font-size="15" font-weight="400"
+        fill="rgba(255,255,255,0.75)" class="sub">
+    Software Developer &#183; Building AI that creates real impact
+  </text>
+
+  <!-- Bottom wave decoration -->
+  <path d="M0,155 C150,140 350,165 550,150 C680,140 750,158 800,152 L800,170 L0,170 Z"
+        fill="rgba(255,255,255,0.04)"/>
+</svg>

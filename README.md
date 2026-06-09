@@ -1,9 +1,5 @@
 <div align="center">
-
-# Hi, I'm Sofia Arenas 👋
-
-**Software Developer · Building AI that creates real impact **
-
+  <img src="./header.svg" alt="Hi, I'm Sofia Arenas" width="800"/>
 </div>
 
 ---
